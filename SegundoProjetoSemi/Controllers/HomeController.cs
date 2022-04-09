@@ -6,21 +6,26 @@ namespace SegundoProjetoSemi.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Formulario()
         {
             return View();
+        }
+
+        public IActionResult SalvarResposta(Resposta reposta)
+        {
+            Repositorio.respostas.Add(reposta);
+            return View("Obrigado");
+        }
+
+
+        public IActionResult Listar()
+        {
+            return View(Repositorio.respostas);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
