@@ -16,10 +16,18 @@ namespace SegundoProjetoSemi.Controllers
             return View();
         }
 
-        public IActionResult SalvarResposta(Resposta reposta)
+        public IActionResult SalvarResposta(Resposta resposta)
         {
-            Repositorio.respostas.Add(reposta);
-            return View("Obrigado");
+            if (ModelState.IsValid)
+            {
+                Repositorio.respostas.Add(resposta);
+                return View("Obrigado");
+            }
+            else
+            {
+                return View("Formulario", resposta);
+            }
+            
         }
 
 
