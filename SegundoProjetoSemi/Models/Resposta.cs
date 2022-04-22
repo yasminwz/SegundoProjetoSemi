@@ -9,6 +9,12 @@ namespace SegundoProjetoSemi.Models
         public string Email { get; set;}
         [Required(ErrorMessage = "Por favor, preencha a Resposta!")]
         public string Opcao { get; set;}
+        [Required(ErrorMessage = "Por favor, preencha o Telefone!")]
+        public string Telefone{ get; set;}
+        [Required(ErrorMessage = "Por favor, preencha o Sobrenome!")]
+        public string Sobrenome{ get; set;}
+
+
 
     }
 }
